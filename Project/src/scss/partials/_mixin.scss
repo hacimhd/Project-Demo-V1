@@ -1,0 +1,108 @@
+@mixin _main($width: null,
+  $height: null,
+  $margin: null,
+  $padding: null,
+  $position: null,
+  $top: null,
+  $left: null,
+  $f_size: null,
+  $color: null,
+  $cursor: null,
+  $border: null,
+  $border-radius: null,
+  $text-align: null,
+  $back-color: null,
+  $object_f: null,
+  $right: null,
+  $bottom: null,
+  $background: null,
+  $font_s: null,
+  $display: null,
+  $align_it: null,
+  $just_content: null,
+  $flex_direc: null,
+  $f_weight: null,
+) {
+  width: $width;
+  height: $height;
+  margin: $margin;
+  padding: $padding;
+  position: $position;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  font-size: $f_size;
+  font-weight: $f_weight;
+  color: $color;
+  cursor: $cursor;
+  border: $border;
+  border-radius: $border-radius;
+  text-align: $text-align;
+  background-color: $back-color;
+  object-fit: $object_f;
+  background: $background;
+  font-size: $font_s;
+  display: $display;
+  justify-content: $just_content;
+  align-items: $align_it;
+  flex-direction: $flex_direc;
+}
+
+@mixin text($f_size: null,
+  $f_style: null,
+  $f_weight: null,
+  $line_h: null,
+  $color: null,
+  $txt_align: null,
+) {
+  font-size: $f_size;
+  font-style: $f_style;
+  font-weight: $f_weight;
+  line-height: $line_h;
+  color: $color;
+  text-align: $txt_align;
+
+}
+
+@mixin position($position: null,
+  $top: null,
+  $left: null,
+  $bottom: null,
+  $right: null,
+  $z_index: null,
+) {
+  position: $position;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  z-index: $z_index;
+}
+
+%logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+%textsize {
+  text-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+%bordergradient {
+  border: 1px solid $gradient-first;
+  border-bottom-color: $gradient-second;
+  border-left-color: $gradient-second;
+}
+
+%blurbackground {
+  background: radial-gradient(107.32% 141.42% at 0% 0%,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0) 100%);
+  box-shadow: -2.418426275253296px -2.418426275253296px 120.92131805419922px 0px rgba(255, 255, 255, 0.02) inset;
+  backdrop-filter: blur(5px);
+}

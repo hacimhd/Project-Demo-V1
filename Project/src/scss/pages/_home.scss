@@ -1,0 +1,332 @@
+body {
+  background-color: $black-bgcolor;
+}
+
+main {
+  #bg_img {
+    width: 100%;
+    height: 344px;
+    background-image: url("../image/Cover-Back-Area.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: -999;
+
+    .volume_up {
+      @media (max-width:768px) {
+        right: 50px;
+        bottom: 140px;
+      }
+
+      transition: .4s ease-in-out;
+      @extend %bordergradient;
+      @include position($position: absolute, $right: 100px, $bottom: 90px);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  #slider {
+    position: relative;
+    z-index: 9;
+
+    .swiper {
+      padding-top: 100px;
+      padding-left: 70px;
+      width: 100%;
+      height: 100%;
+      top: -80px;
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: $black-bgcolor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s ease-in-out;
+
+        .slider_card {
+          transition: 0.5s ease-in-out;
+          border-radius: 9px;
+
+          .card_img {
+            transition: 0.5s ease-in-out;
+            width: 297px;
+            height: 170px;
+            border-radius: 9px;
+            overflow: hidden;
+
+            @media (max-width:1270px) {
+              width: 100%;
+            }
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .card_text {
+            transition: 0.5s ease-in-out;
+            padding: 27px 10px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h5 {
+              @include text($f_size: 14px, $f_style: normal, $f_weight: 400, $line_h: 120%, $color: $white-color);
+
+            }
+
+            p {
+              transition: 0.5s ease-in-out;
+              opacity: 0;
+              @include text($f_size: 12px, $f_style: normal, $f_weight: 400, $line_h: 120%, $color: $white-color);
+
+            }
+          }
+
+          .card_btns {
+            transition: 0.5s ease-in-out;
+            padding: 27px 0;
+            display: none;
+            opacity: 0;
+            align-items: center;
+            justify-content: center;
+            gap: 11px;
+
+            a {
+              width: 35px;
+              height: 35px;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              @extend %blurbackground;
+            }
+
+            #special_btn {
+              width: 42px;
+              height: 42px;
+              background: radial-gradient(107.32% 141.42% at 0% 0%,
+                  #0cf9f0 0%,
+                  #d686ff 100%);
+            }
+          }
+        }
+
+        &:hover {
+          position: relative;
+          z-index: 999;
+          margin: 0;
+          padding: 0 0 50px 0;
+          border-radius: 9px;
+
+          .slider_card {
+            border-radius: 8px;
+            @extend %blurbackground;
+            position: absolute;
+            z-index: 999;
+            top: -70px;
+
+            .card_img {
+              border-radius: 9px;
+              overflow: hidden;
+              width: 363px;
+              height: 160px;
+
+              @media (max-width:768px) {
+                width: 100%;
+              }
+            }
+
+            .card_text {
+              p {
+                opacity: 1;
+              }
+            }
+
+            .card_btns {
+              display: flex;
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .swiper-button-next {
+        @media (max-width:768px) {
+          display: none;
+        }
+
+        width: 73px;
+        height: 73px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.644);
+
+        &::after {
+          color: $white-color;
+          font-size: 30px;
+        }
+      }
+
+      .swiper-button-prev {
+        @media (max-width:768px) {
+          display: none;
+        }
+
+        left: 80px;
+        width: 73px;
+        height: 73px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.644);
+
+        &::after {
+          color: $white-color;
+          font-size: 30px;
+        }
+      }
+    }
+
+    .mySwiper_second {
+      top: -90px;
+    }
+  }
+}
+
+#signin {
+  transition: .4s ease-in-out;
+  @include position($position: fixed, $top: -200%, $left: 0, $right: 0, $bottom: 0, $z_index: 9999);
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.432);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .forms {
+    width: 490px;
+    padding: 48px 60px 20px;
+    @extend %blurbackground;
+    border-radius: 30px;
+    position: relative;
+
+    .close {
+      @include position($position: absolute, $top: -18px, $right: -18px);
+      @extend %blurbackground;
+      @extend %bordergradient;
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        color: $white-color
+      }
+    }
+
+    .form_head {
+      h3 {
+        @include text($f_size: 30px, $f_style: normal, $f_weight: 400, $line_h: 120%, $color: $white-color, $txt_align: center);
+
+      }
+
+      h4 {
+        margin-top: 42px;
+        @include text($f_size: 18px, $f_style: normal, $f_weight: 400, $line_h: 120%, $color: $white-color, $txt_align: center);
+      }
+    }
+
+    form {
+      .inputs {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+
+        label {
+          @include text($f_size: 14px, $f_style: normal, $f_weight: 400, $line_h: 120%, $color: $white-color);
+
+        }
+
+        input {
+          cursor: pointer;
+          @extend %bordergradient;
+          width: 100%;
+          border-radius: 8px;
+          background: $black-color;
+          padding: 10px 30px;
+          color: $white-color;
+        }
+      }
+
+      .forgot {
+        text-align: end;
+
+        p {
+          display: inline-block;
+          @include text($f_size: 12px, $f_style: normal, $f_weight: 400, $line_h: 120%, $color: $white-color);
+
+          transition: .3s ease-in-out;
+
+          &:hover {
+            cursor: pointer;
+            color: $gradient-first;
+          }
+        }
+      }
+
+      .btns {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+          padding: 14px 59px;
+          font-size: 17px;
+          background-color: transparent;
+          border: none;
+          border-radius: 55px;
+          color: $white-color;
+          transition: .5s ease-in-out;
+
+          &:nth-child(2) {
+            @extend %blurbackground;
+            @extend %bordergradient;
+          }
+
+          &:hover {
+            @extend %bordergradient;
+            @extend %blurbackground;
+          }
+        }
+      }
+    }
+
+    .form_foot {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+
+      p {
+        max-width: 310px;
+        @include text($f_size: 12px, $f_style: normal, $f_weight: 400, $line_h: 120%, $color: rgba(255, 255, 255, 0.60), $txt_align: center);
+
+      }
+    }
+
+  }
+}
